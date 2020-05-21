@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 ////
-app.use(express.static(path.join(__dirname, 'react-ui/public')));
+app.use(express.static(path.join(__dirname, 'react-ui/build')));
 
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
@@ -15,5 +15,5 @@ app.get('/express_backend', (req, res) => {
 });
 ////////
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/react-ui/public/index.html'));
+  res.sendFile(path.join(__dirname+'/react-ui/build/index.html'));
 });
